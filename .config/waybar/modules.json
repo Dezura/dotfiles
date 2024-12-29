@@ -1,0 +1,164 @@
+{
+    "group/arch-logo": {
+	"orientation": "inherit",
+	"drawer": {
+	    "transition-duration": 300,
+	    "children-class": "not-memory"
+	},
+	"modules": ["custom/arch", "custom/wallpaper", "idle_inhibitor"]
+    },
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": false,
+        "tooltip-format": "btw"
+    },
+
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+	},
+	"tooltip-format-activated": "ForceScreenAwake: Enabled",
+	"tooltip-format-deactivated": "ForceScreenAwake: Disabled"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+	"reverse-scrolling": true
+    },
+    "network": {
+        "format": "{ifname}",
+    	"format-wifi": "   {signalStrength}%",
+    	"format-ethernet": "  {ifname}",
+    	"format-disconnected": "Disconnected",
+    	"tooltip-format": " {ifname} via {gwaddri}",
+    	"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    	"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    	"tooltip-format-disconnected": "Disconnected",
+    	"max-length": 50 
+    },
+    "group/hardware": {
+	"orientation": "inherit",
+	"drawer": {
+	    "transition-duration": 300,
+	    "children-class": "not-memory",
+	    "transition-left-to-right": false
+	},
+	"modules": ["battery", "cpu", "memory"]
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "  {}%",
+	"tooltip": true
+    },
+    "temperature": {
+        "interval": 10,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 100,
+        "format-critical": " {temperatureC}",
+        "format": " {temperatureC}°C"
+    },
+    "hyprland/language": {
+       "format": "  {}",
+       "format-en": "EN",
+       "format-ru": "RU"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{time}  {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+	"tooltip": false
+    },
+    "clock#date": {
+        "format": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/wallpaper": {
+    	"format": "",
+   	"on-click": "waypaper",
+    	"tooltip-format": "Select a wallpaper"
+    },
+    "backlight": {
+    	"format": "{icon} {percent}%",
+    	"format-icons": [
+     	  "",
+     	  "",
+     	  "",
+     	  "",
+      	  "",
+      	  "",
+      	  "",
+     	  "",
+       	  "",
+     	  "",
+     	  "",
+     	  "",
+     	  "",
+     	  "",
+     	  ""
+    ],
+    "scroll-step": 1,
+    "reverse-scrolling": true
+  },
+  "group/power": {
+	"orientation": "inherit",
+	"drawer": {
+	    "transition-duration": 300,
+	    "children-class": "not-memory",
+	    "transition-left-to-right": false
+	},
+	"modules": ["custom/exit"]
+    },
+  "custom/exit": {
+    	"format": "",
+    	"on-click": "wlogout",
+    	"tooltip-format": "Power Menu"
+  },
+  "tray": {
+    "icon-size": 19,
+    "spacing": 10
+  }
+}
