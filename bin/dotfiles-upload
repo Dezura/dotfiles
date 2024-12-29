@@ -22,7 +22,7 @@ read user_message
 if [ -z "$user_message" ]; then
   commit_message="Changes: $files"
 else
-  commit_message="$user_message: $files"
+  commit_message="$user_message"
 fi
 
 # Commit the changes with the generated message
@@ -31,5 +31,5 @@ git commit -m "$commit_message"
 # Push the changes to the default remote and branch
 git push -u origin master
 
-echo "\n\nCommitted and pushed changes with message: $commit_message"
+echo "Committed and pushed changes with message: $commit_message"
 
