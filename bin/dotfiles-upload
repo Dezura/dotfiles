@@ -11,9 +11,19 @@ fi
 # Stage all changes (including new files, modifications, and deletions)
 git add -A
 
-# Generate a commit message listing the modified or added files
-files=$(git diff --cached --name-only)
-commit_message="Changes: $files"
+# Generate a commit message listing the modified or added files, joined by commas
+files=$(git diff --cached --name-only | tr '\n' ', ' | sed 's/, $//')
+
+# Prompt the user for a commit message
+echo "Enter a commit message (or press Enter to use the default):"
+read user_message
+
+# If the user entered a message, use it. Otherwise, use a default message
+if [ -z "$user_message" ]; then
+  commit_message="Changes: $files"
+else
+  commit_message="$user_message: $files"
+fi
 
 # Commit the changes with the generated message
 git commit -m "$commit_message"
@@ -21,5 +31,5 @@ git commit -m "$commit_message"
 # Push the changes to the default remote and branch
 git push -u origin master
 
-echo "Committed and pushed changes with message: $commit_message"
+echo "\n\nCommitted and pushed changes with message: $commit_message"
 
