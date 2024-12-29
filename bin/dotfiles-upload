@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cd ~/.dotfiles
+
+# Check if there are any changes
+if git diff --quiet; then
+  echo "No changes to commit."
+  exit 0
+fi
+
+# Stage all changes (including new files, modifications, and deletions)
+git add -A
+
+# Generate a commit message listing the modified or added files
+files=$(git diff --cached --name-only)
+commit_message="Changes: $files"
+
+# Commit the changes with the generated message
+git commit -m "$commit_message"
+
+# Push the changes to the default remote and branch
+git push -u origin master
+
+echo "Committed and pushed changes with message: $commit_message"
+
