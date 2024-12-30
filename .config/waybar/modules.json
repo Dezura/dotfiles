@@ -110,11 +110,13 @@
     },
     "clock": {
         "format": "{:%I:%M %p}",
-	"tooltip": false
+	"tooltip": false,
+	"on-click": "swaync-client -t -sw"
     },
     "clock#date": {
         "format": "{:%Y-%m-%d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+
     },
     "custom/wallpaper": {
     	"format": "",
@@ -156,6 +158,10 @@
     	"format": "",
     	"on-click": "wlogout",
     	"tooltip-format": "Power Menu"
+  },
+  "custom/notification":{
+    	"format": "󱅫",
+    	"on-click": "swaync-client -t -sw"
   },
   "tray": {
     "icon-size": 19,
