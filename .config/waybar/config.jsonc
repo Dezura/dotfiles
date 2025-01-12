@@ -16,10 +16,10 @@
     "modules-right": [
 	"tray",
 	"backlight",
-        "pulseaudio",
-        "network",
-        "group/hardware",
-        "battery#bat2",
+    "pulseaudio",
+    "network",
+    "group/hardware",
+    "battery#bat2",
 	"clock",
 	"group/power"
     ],

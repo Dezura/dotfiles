@@ -71,7 +71,7 @@
 	    "children-class": "not-memory",
 	    "transition-left-to-right": false
 	},
-	"modules": ["battery", "cpu", "memory"]
+	"modules": ["battery", "custom/cliphist", "cpu", "memory"]
     },
     "cpu": {
         "format": "  {usage}%",
@@ -166,5 +166,13 @@
   "tray": {
     "icon-size": 19,
     "spacing": 10
+  },
+  "custom/cliphist": {
+    "format": "Clippy  ",
+    "on-click": "sleep 0.1 && ~/.config/hypr/scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/hypr/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/cliphist.sh w",
+    "tooltip-format": "Clipboard Manager"
   }
+
 }
